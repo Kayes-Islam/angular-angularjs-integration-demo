@@ -19,5 +19,6 @@ namespace Recipe.Central
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
     }
 }

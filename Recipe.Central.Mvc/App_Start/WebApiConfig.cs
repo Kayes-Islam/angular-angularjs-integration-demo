@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Recipe.Central.Controllers;
+using Recipe.Central.Infrastructure;
+using Recipe.Central.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Mvc;
+using Unity;
 
 namespace Recipe.Central
 {
@@ -10,6 +15,14 @@ namespace Recipe.Central
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            UnityContainer container = new UnityContainer();
+            container.RegisterType<IRecipeService, RecipeService>();
+            container.RegisterType<IController, HomeController>("home");
+
+            UnityControllerFactory factory = new UnityControllerFactory(container);
+
+            ControllerBuilder.Current.SetControllerFactory(factory);
+            config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

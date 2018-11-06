@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Recipe.Central.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,16 @@ namespace Recipe.Central.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRecipeService _recipeService;
+        public HomeController(IRecipeService recipeService)
+        {
+            _recipeService = recipeService;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var recipes = _recipeService.GetRecipies();
+            return View(recipes);
         }
 
         public ActionResult About()
