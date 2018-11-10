@@ -26,6 +26,12 @@ namespace Recipe.Central
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(
+                new ScriptBundle("~/bundles/angularjs")
+                    .IncludeDirectory("~/Scripts/AngularJS-1.2.32", "*.js")
+                    .IncludeDirectory("~/AppJS", "*.js", true)
+            );
         }
     }
 }

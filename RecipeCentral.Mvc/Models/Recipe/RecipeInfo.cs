@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Recipe.Central.Models.Recipe
 {
-    public class RecipeDetails
+    public class RecipeInfo
     {
-        public Guid Id { get; set; }
-        public Guid Name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

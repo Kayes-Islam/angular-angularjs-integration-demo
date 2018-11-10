@@ -17,7 +17,7 @@ namespace Recipe.Central
             // Web API configuration and services
             UnityContainer container = new UnityContainer();
             container.RegisterType<IRecipeService, RecipeService>();
-            container.RegisterType<IController, HomeController>("home");
+            container.RegisterType<IController, AdminController>("admin");
 
             UnityControllerFactory factory = new UnityControllerFactory(container);
 
