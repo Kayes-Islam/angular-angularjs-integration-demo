@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
+using Newtonsoft.Json;
 using Recipe.Central.Models.Recipe;
 
 namespace Recipe.Central.Services
@@ -25,6 +28,12 @@ namespace Recipe.Central.Services
                     Name = "B"
                 }
             };
+
+            _recipes = JsonConvert.DeserializeObject<List<RecipeDetails>>(
+                File.ReadAllText(
+                    HostingEnvironment.MapPath(@"~/App_Data/recipes.json")
+                )
+            );
         }
 
         public List<RecipeInfo> GetRecipies()
@@ -48,7 +57,7 @@ namespace Recipe.Central.Services
             recipeDetails.Id = _recipes
                 .Select(r => r.Id)
                 .DefaultIfEmpty(0)
-                .Max();
+                .Max() + 1;
 
             _recipes.Add(recipeDetails);
 

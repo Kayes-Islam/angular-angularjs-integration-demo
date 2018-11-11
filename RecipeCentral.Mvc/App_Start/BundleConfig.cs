@@ -19,10 +19,6 @@ namespace Recipe.Central
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -30,7 +26,15 @@ namespace Recipe.Central
             bundles.Add(
                 new ScriptBundle("~/bundles/angularjs")
                     .IncludeDirectory("~/Scripts/AngularJS-1.2.32", "*.js")
-                    .IncludeDirectory("~/AppJS", "*.js", true)
+                    .Include("~/AppJS/app.js")
+            );
+
+            bundles.Add(new ScriptBundle("~/bundles/ui-bootstrap").Include(
+          "~/Scripts/ui-bootstrap-tpls-0.12.0.min.js"));
+
+            bundles.Add(
+                new ScriptBundle("~/bundles/angularjs/recipe")
+                    .IncludeDirectory("~/AppJS/recipe", "*.js", true)
             );
         }
     }

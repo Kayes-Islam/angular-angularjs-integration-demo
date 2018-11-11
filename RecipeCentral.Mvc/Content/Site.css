@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -16,9 +16,35 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
 }
+
+.fade.in {
+    opacity: 1;
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+    opacity: 0.5 !important;
+}
+
+
+.modal-backdrop.fade {
+    opacity: 0.5 !important;
+}
+
+.items-editor-dialog-text-editor {
+    width: 100%;
+    padding: 0px 10px;
+}
+
+/*form .list-group{
+    margin-left: 15px;
+    margin-right: 15px;
+}*/

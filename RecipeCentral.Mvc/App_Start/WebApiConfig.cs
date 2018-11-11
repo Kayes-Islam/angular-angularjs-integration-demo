@@ -1,4 +1,6 @@
-﻿using Recipe.Central.Controllers;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Recipe.Central.Controllers;
 using Recipe.Central.Infrastructure;
 using Recipe.Central.Services;
 using System;
@@ -32,6 +34,11 @@ namespace Recipe.Central
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
         }
     }
 }

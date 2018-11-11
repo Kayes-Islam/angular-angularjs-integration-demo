@@ -1,1 +1,1 @@
-﻿angular.module("recipe.app", []);
+﻿angular.module('recipe.app', ['ui.bootstrap']);

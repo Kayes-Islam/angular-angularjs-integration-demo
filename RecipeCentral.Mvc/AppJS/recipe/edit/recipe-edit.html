@@ -1,1 +1,65 @@
-﻿
+﻿<form name="myForm" method="post" class="ng-pristine ng-valid ng-valid-required">
+    <div class="form-horizontal">
+        <hr />
+        <div ng-show="error" class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+        <div class="form-group">
+            <label for="name">Recipe Name</label>
+            <input type="text" name="name" class="form-control" ng-model="model.name" required />
+        </div>
+
+        <div class="clearfix">
+            <div class="form-group clearfix">
+                <label for="ingredients">Ingredients</label>
+                <ul name="ingredients" class="list-group">
+                    <li class="list-group-item" ng-repeat="ingredient in model.ingredients">
+                        <span>{{ingredient}}</span>
+                        <button class='btn btn-sm float-right' style='background-color:transparent;' ng-click="editIngredient($index)">
+                            <i class="far fa-edit"></i>
+                        </button>
+
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="btn btn-default rounded-circle float-right bg-primary" ng-click="addIngredient()">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        
+        <div class="clearfix">
+            <div class="form-group">
+                <label for="steps">Steps</label>
+                <ul name="steps" class="list-group">
+                    <li class="list-group-item" ng-repeat="step in model.steps">
+                        <span>{{step}}</span>
+                        <button class='btn btn-sm float-right' style='background-color:transparent;' ng-click="editStep($index)">
+                            <i class="far fa-edit"></i>
+                        </button>
+
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-default rounded-circle float-right bg-primary" ng-click="addStep()">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+
+        <button class="btn btn-default" ng-click="submit()">Save</button>
+    </div>
+</form>
+<script type="text/ng-template" id="ItemEditorDialog.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit</h3>
+    </div>
+    <div class="modal-body">
+        <textarea class="items-editor-dialog-text-editor" ng-style="textAreaStyle" wrap="soft" ng-model="text" />
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

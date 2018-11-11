@@ -32,6 +32,25 @@ namespace Recipe.Central.Controllers
         public ActionResult Edit(RecipeDetails recipe)
         {
             recipe = _recipeService.UpdateRecipe(recipe);
+            return View(recipe);
+        }
+
+        public ActionResult Create()
+        {
+            var recipe = new RecipeDetails();
+            return View("Edit", recipe);
+        }
+
+        [HttpPost]
+        public ActionResult Create(RecipeDetails recipe)
+        {
+            recipe = _recipeService.AddRecipe(recipe);
+            return View("Edit", recipe);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            _recipeService.DeleteRecipe(id);
             return RedirectToAction("Index");
         }
     }

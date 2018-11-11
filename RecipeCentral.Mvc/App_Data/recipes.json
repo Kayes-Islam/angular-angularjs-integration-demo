@@ -1,0 +1,49 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Grilled Vegetables",
+    "ingredients": [
+      "3 red bell peppers, seeded and halved",
+      "3 yellow squash (about 1 pound total), sliced lengthwise into 1/2-inch-thick rectangles",
+      "3 zucchini (about 12 ounces total), sliced lengthwise into 1/2-inch-thick rectangles",
+      "3 Japanese eggplant (12 ounces total), sliced lengthwise into 1/2-inch-thick rectangles",
+      "12 cremini mushrooms",
+      "1 bunch (1-pound) asparagus, trimmed",
+      "12 green onions, roots cut off",
+      "1/4 cup plus 2 tablespoons olive oil",
+      "Salt and freshly ground black pepper",
+      "3 tablespoons balsamic vinegar",
+      "2 garlic cloves, minced",
+      "1 teaspoon chopped fresh Italian parsley leaves",
+      "1 teaspoon chopped fresh basil leaves",
+      "1/2 teaspoon finely chopped fresh rosemary leaves"
+    ],
+    "steps": [
+      "Place a grill pan over medium-high heat or prepare the barbecue (medium-high heat). Brush the vegetables with 1/4 cup of the oil to coat lightly. Sprinkle the vegetables with salt and pepper. Working in batches, grill the vegetables until tender and lightly charred all over, about 8 to 10 minutes for the bell peppers; 7 minutes for the yellow squash, zucchini, eggplant, and mushrooms; 4 minutes for the asparagus and green onions. Arrange the vegetables on a platter. The key to getting those great grill marks is to not shift the vegetables too frequently once they've been placed on the hot grill.",
+      "Meanwhile, whisk the remaining 2 tablespoons of oil, balsamic vinegar, garlic, parsley, basil, and rosemary in a small bowl to blend. Add salt and pepper to taste. Drizzle the herb mixture over the vegetables. Serve the vegetables, warm or at room temperature."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Slow cooker pulled beef rool",
+    "ingredients": [
+      "1kg beef chuck",
+      "1 cup Massel beef stock",
+      "1 onion, thinly sliced",
+      "3 garlic cloves, thinly sliced",
+      "1 teaspoon fennel seeds",
+      "1 bay leaf",
+      "3 thyme sprigs",
+      "Bread rolls, to serve",
+      "Salad leaves, to serve",
+      "Gherkins, to serve",
+      "Sliced tomato, to serve",
+      "Sliced Swiss cheese, to serve",
+      "Dijon mustard, to serve"
+    ],
+    "steps": [
+      "Slash beef with a sharp knife without cutting all the way through (to help flavours penetrate). Place in a 3L (12 cup) slow cooker with Massel Liquid Stock Beef Style, onion, garlic, seeds and bay leaf. Season. Cover and cook on low for 8 hours or until meat is very tender and flakes with a fork.",
+      "Place beef on a board and shred with 2 forks. Add as much cooking liquid as you like to moisten the meat."
+    ]
+  }
+]
