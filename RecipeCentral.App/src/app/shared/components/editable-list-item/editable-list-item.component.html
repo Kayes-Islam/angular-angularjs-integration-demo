@@ -1,0 +1,21 @@
+<div class="clearfix">
+  <div *ngIf="!isEditMode">
+      <span>{{text}}</span>
+      <button class='btn btn-sm float-right' style='background-color:transparent;' (click)="enterEditMode()">
+          <i class="fa fa-edit"></i>
+      </button>
+  </div>
+  
+  <div *ngIf="isEditMode" >
+    <textarea class="editor-textarea" wrap="soft" [(ngModel)]="editText"></textarea>
+    <span class='float-right'>
+        <button class='btn btn-sm' style='background-color:transparent;' (click)="discardChange()">
+            <i class="fa fa-times"></i>
+        </button>
+        <button class='btn btn-sm' style='background-color:transparent;' (click)="acceptChange()">
+            <i class="fa fa-check"></i>
+        </button>
+  
+    </span>
+  </div>
+</div>
