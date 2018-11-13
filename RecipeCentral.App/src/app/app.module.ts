@@ -10,6 +10,7 @@ import { DOCUMENT, APP_BASE_HREF } from '@angular/common';
 
 import * as angularjs from 'angular';
 import { EditableListItemComponent } from './shared/components/editable-list-item/editable-list-item.component';
+import { RecipeService } from './shared/services/recipe.service';
 declare var angular: angular.IAngularStatic;
 
 export function appBaseHrefFactory(){
@@ -46,6 +47,7 @@ export class AppModule {
     if (angularjsAppRoot) {
           let angularJsApp = angular.module('recipe.app');
           angularJsApp.directive('rcEditableListItem', downgradeComponent({component: EditableListItemComponent}));
+          angularJsApp.factory('recipeService', downgradeInjectable(RecipeService));
           this.upgrade.bootstrap(angularjsAppRoot, ['recipe.app']);
     }
     else{ 

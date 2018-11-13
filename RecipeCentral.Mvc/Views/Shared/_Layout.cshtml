@@ -36,12 +36,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angularjs")
     <script type="text/javascript">
+        var mvcData = {
+            model: @Html.Raw(JsonConvert.SerializeObject(Model)),
+            baseHref: '@Url.Content("~")'.replace(/(\/)*$/, '')
+        };
+
         angular.module("recipe.app")
             .service('mvcDataService', function () {
-                return {
-                    model: @Html.Raw(JsonConvert.SerializeObject(Model)),
-                    baseHref: '@Url.Content("~")'.replace(/(\/)*$/, '')
-                };
+                return mvcData;
             });
     </script>
     @Scripts.Render("~/bundles/ui-bootstrap")

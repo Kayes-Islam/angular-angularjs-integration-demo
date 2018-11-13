@@ -1,10 +1,10 @@
-﻿RecipeEditCtrl.$inject = ['$scope', '$http', '$location', '$window', '$modal', 'mvcDataService'];
-function RecipeEditCtrl($scope, $http, $location, $window, $modal, mvcDataService) {
+﻿RecipeEditCtrl.$inject = ['$scope', '$http', '$location', '$window', '$modal', 'mvcDataService', 'recipeService'];
+function RecipeEditCtrl($scope, $http, $location, $window, $modal, mvcDataService, recipeService) {
     $scope.model = mvcDataService.model;
     
     $scope.submit = function () {
-        $http.post($location.url(), $scope.model)
-            .then(function () {
+        recipeService.save($scope.model)
+            .subscribe(function () {
                 $window.location.href = mvcDataService.baseHref + "/admin";
             },
             function (error) {
