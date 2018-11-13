@@ -9,7 +9,7 @@ export class MvcDataService {
   constructor() { }
 
   public get baseHref(){
-    return mvcData && mvcData.baseHref ? mvcData.baseHref + '/' : '/';
+    return mvcData && mvcData.baseHref ? mvcData.baseHref : '/';
   }
 
   public get model(){

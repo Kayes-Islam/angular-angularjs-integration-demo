@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeService } from './services/recipe.service';
 import { MvcDataService } from './services/mvc-data.service';
+import { TextEditorDialogComponent } from './components/text-editor-dialog/text-editor-dialog.component';
 
 @NgModule({
-  declarations: [EditableListItemComponent],
+  declarations: [EditableListItemComponent, TextEditorDialogComponent],
   imports: [
     CommonModule,
     FormsModule,

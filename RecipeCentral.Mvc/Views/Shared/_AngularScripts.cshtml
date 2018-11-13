@@ -1,0 +1,8 @@
+﻿@using Newtonsoft.Json
+<script type="text/javascript">
+        var mvcData = {
+            model: @Html.Raw(JsonConvert.SerializeObject(Model)),
+            baseHref: '@Url.Content("~")'.replace(/(\/)*$/, '')
+        };
+</script>
+@Scripts.Render("~/bundles/angular-scripts")

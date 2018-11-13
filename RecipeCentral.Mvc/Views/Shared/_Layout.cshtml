@@ -1,5 +1,4 @@
-﻿@using Newtonsoft.Json
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -35,19 +34,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angularjs")
-    <script type="text/javascript">
-        var mvcData = {
-            model: @Html.Raw(JsonConvert.SerializeObject(Model)),
-            baseHref: '@Url.Content("~")'.replace(/(\/)*$/, '')
-        };
-
-        angular.module("recipe.app")
-            .service('mvcDataService', function () {
-                return mvcData;
-            });
-    </script>
     @Scripts.Render("~/bundles/ui-bootstrap")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/angular-scripts")
+    @Html.Partial("_AngularScripts")
 </body>
 </html>

@@ -20,6 +20,7 @@ namespace Recipe.Central
             UnityContainer container = new UnityContainer();
             container.RegisterType<IRecipeService, RecipeService>();
             container.RegisterType<IController, AdminController>("admin");
+            container.RegisterType<IController, AppContorller>("app");
 
             UnityControllerFactory factory = new UnityControllerFactory(container);
 
@@ -39,6 +40,9 @@ namespace Recipe.Central
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             };
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
         }
     }
 }
