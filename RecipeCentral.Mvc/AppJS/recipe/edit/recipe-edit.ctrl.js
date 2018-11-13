@@ -12,22 +12,6 @@ function RecipeEditCtrl($scope, $http, $location, $window, $modal, mvcDataServic
             });
     }
 
-    $scope.editIngredient = function (index) {
-        var data = $scope.model.ingredients[index];
-        $scope.openEditor(data, 'sm')
-            .then(function (result) {
-                $scope.model.ingredients[index] = result;
-            });
-    };
-
-    $scope.editStep = function (index) {
-        var data = $scope.model.steps[index];
-        $scope.openEditor(data, 'lg')
-            .then(function (result) {
-                $scope.model.steps[index] = result;
-            });
-    };
-
     $scope.addIngredient = function (index) {
         var data = '';
         $scope.openEditor(data, 'sm')

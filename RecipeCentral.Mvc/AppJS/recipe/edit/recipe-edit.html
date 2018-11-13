@@ -14,11 +14,7 @@
                 <label for="ingredients">Ingredients</label>
                 <ul name="ingredients" class="list-group">
                     <li class="list-group-item" ng-repeat="ingredient in model.ingredients">
-                        <span>{{ingredient}}</span>
-                        <button class='btn btn-sm float-right' style='background-color:transparent;' ng-click="editIngredient($index)">
-                            <i class="fa fa-edit"></i>
-                        </button>
-
+                        <rc-editable-list-item [text]="ingredient" editor-size="sm"></rc-editable-list-item>
                     </li>
                 </ul>
             </div>
@@ -33,11 +29,7 @@
                 <label for="steps">Steps</label>
                 <ul name="steps" class="list-group">
                     <li class="list-group-item" ng-repeat="step in model.steps">
-                        <span>{{step}}</span>
-                        <button class='btn btn-sm float-right' style='background-color:transparent;' ng-click="editStep($index)">
-                            <i class="fa fa-edit"></i>
-                        </button>
-
+                        <rc-editable-list-item [text]="step" editor-size="lg"></rc-editable-list-item>
                     </li>
                 </ul>
             </div>
@@ -46,10 +38,11 @@
             </button>
         </div>
 
-
         <button class="btn btn-default" ng-click="submit()">Save</button>
     </div>
 </form>
+
+
 <script type="text/ng-template" id="ItemEditorDialog.html">
     <div class="modal-header">
         <h3 class="modal-title">Edit</h3>

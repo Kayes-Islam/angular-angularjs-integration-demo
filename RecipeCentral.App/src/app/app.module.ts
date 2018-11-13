@@ -45,6 +45,7 @@ export class AppModule {
     var angularjsAppRoot =  this.document.getElementById('ng-app');
     if (angularjsAppRoot) {
           let angularJsApp = angular.module('recipe.app');
+          angularJsApp.directive('rcEditableListItem', downgradeComponent({component: EditableListItemComponent}));
           this.upgrade.bootstrap(angularjsAppRoot, ['recipe.app']);
     }
     else{ 

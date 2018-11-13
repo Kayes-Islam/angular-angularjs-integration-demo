@@ -5,9 +5,11 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
   templateUrl: './editable-list-item.component.html',
   styleUrls: ['./editable-list-item.component.scss']
 })
-export class EditableListItemComponent implements OnChanges {
+export class EditableListItemComponent {
   @Input() text: string;
   @Output() textChange: EventEmitter<string> = new EventEmitter<string>();
+
+  @Input() editorSize: "sm" | "lg" = "sm";
 
   editText:string;
   isEditMode: boolean = false;
@@ -20,11 +22,6 @@ export class EditableListItemComponent implements OnChanges {
 
     this.text = value;
     this.textChange.emit(value);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // if(!changes.text.isFirstChange() && changes.text.currentValue != changes.text.previousValue)
-    //   return;    
   }
 
   enterEditMode(){

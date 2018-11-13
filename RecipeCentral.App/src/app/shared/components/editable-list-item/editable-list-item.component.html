@@ -7,7 +7,8 @@
   </div>
   
   <div *ngIf="isEditMode" >
-    <textarea class="editor-textarea" wrap="soft" [(ngModel)]="editText"></textarea>
+    <textarea class="editor-textarea" wrap="soft" [(ngModel)]="editText"
+        [style.height.px]="editorSize == 'sm' ? 100 : 400" ></textarea>
     <span class='float-right'>
         <button class='btn btn-sm' style='background-color:transparent;' (click)="discardChange()">
             <i class="fa fa-times"></i>
