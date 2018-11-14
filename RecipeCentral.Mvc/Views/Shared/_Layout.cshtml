@@ -28,13 +28,12 @@
         </div>
     </nav>
 
-    <div id="ng-app" class="container body-content">
+    <div id="jquery-app" class="container body-content">
         @RenderBody()
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/angularjs")
-    @Scripts.Render("~/bundles/ui-bootstrap")
+    @*@Scripts.Render("~/bundles/ui-bootstrap")*@
     @RenderSection("scripts", required: false)
     @Html.Partial("_AngularScripts")
 </body>

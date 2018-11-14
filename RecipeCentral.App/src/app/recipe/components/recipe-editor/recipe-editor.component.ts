@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, NgZone } from '@angular/core';
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeDetails } from 'src/app/shared/models/recipe-details';
@@ -10,32 +10,32 @@ import { isNumber } from 'util';
   templateUrl: './recipe-editor.component.html',
   styleUrls: ['./recipe-editor.component.scss']
 })
-export class RecipeEditorComponent implements OnInit {
+export class RecipeEditorComponent implements OnChanges  {
 
   public model: RecipeDetails = null;
   public error: string;
   public newIngredient: string = '';
   public newStep: string = '';
+
+  @Input() recipeId: number;
+
   constructor(
     private recipeService: RecipeService, 
     private route: ActivatedRoute, 
-    private mvcDataService: MvcDataService
+    private mvcDataService: MvcDataService,
+    private zone: NgZone
   ) { }
 
-  ngOnInit() {
-    this.route
-      .paramMap.subscribe(params => {
-        let idStr = params.get("id");
+  ngOnChanges(changes: SimpleChanges): void {
+    if(!this.recipeId)
+      return;
 
-        if(!idStr)
-          return;
-
-        let id = Number.parseInt(params.get("id"));
-        this.recipeService.get(id)
-          .subscribe(recipe =>{
-            this.model = recipe;
-          });
-      })
+    this.recipeService.get(this.recipeId)
+      .subscribe(recipe =>{
+        this.zone.run(() => {
+          this.model = recipe;
+        });
+      });
   }
 
   submit() {

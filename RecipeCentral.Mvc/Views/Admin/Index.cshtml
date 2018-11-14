@@ -25,10 +25,32 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                <a class="edit-recipe" href="#" data-id="@item.Id">Edit</a>
+
+                |
+                <a href="@Url.Action("Delete", new { id = item.Id})">Delete</a>
             </td>
         </tr>
     }
 
+
+
 </table>
+
+<div id="overlay">
+    <rc-recipe-editor id="recipe-editor"></rc-recipe-editor>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#overlay").hide();
+            $(".edit-recipe").click(function () {
+                var id = $(this).data("id");
+                $("#recipe-editor").attr("recipe-id", id);
+                $("#overlay").show();
+                return false;
+            });
+        });
+    </script>
+}

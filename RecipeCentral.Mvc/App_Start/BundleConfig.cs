@@ -22,19 +22,19 @@ namespace Recipe.Central
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/site.css"));
 
-            bundles.Add(
-                new ScriptBundle("~/bundles/angularjs")
-                    .IncludeDirectory("~/Scripts/AngularJS-1.2.32", "*.js")
-                    .Include("~/AppJS/app.js")
-            );
+            //bundles.Add(
+            //    new ScriptBundle("~/bundles/angularjs")
+            //        .IncludeDirectory("~/Scripts/AngularJS-1.2.32", "*.js")
+            //        .Include("~/AppJS/app.js")
+            //);
 
             bundles.Add(new ScriptBundle("~/bundles/ui-bootstrap").Include(
           "~/Scripts/ui-bootstrap-tpls-0.12.0.min.js"));
 
-            bundles.Add(
-                new ScriptBundle("~/bundles/angularjs/recipe")
-                    .IncludeDirectory("~/AppJS/recipe", "*.js", true)
-            );
+            //bundles.Add(
+            //    new ScriptBundle("~/bundles/angularjs/recipe")
+            //        .IncludeDirectory("~/AppJS/recipe", "*.js", true)
+            //);
             
             bundles.Add(
                 new ScriptBundle("~/bundles/angular-scripts")
